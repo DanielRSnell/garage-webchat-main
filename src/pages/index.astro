@@ -1,16 +1,159 @@
----
-
----
-
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Frameception</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body>
+    <div class="scheduler">
+      <a
+        href="https://app.chatgptbuilder.io/webchat/?p=1587692&amp;ref=Frameception_Test"
+        class="scheduler__close-btn"
+        >To Chat</a
+      >
+      <iframe
+        class="scheduler__iframe"
+        src="https://assets.a2o-static.com/git/scheduler/v3/street2fleet/themes/precision/2024-07-31-16-01-40/index.html?api_token=4%7CRhwvRsp4MVAtoEZYp9a8r7xcHC1q6heig5hEtfzB&amp;market=pd-northern-nj&amp;bust_downstream_cache=1&amp;iframe_parent_domain=https%3A%2F%2Fpdsnj.com&amp;ga_client_id=1381565334.1723813013&amp;landing_page=https%3A%2F%2Fpdsnj.com%2Fabout&amp;referrer=https%3A%2F%2Fpdsnj.com%2F&amp;original_referrer=https%3A%2F%2Fpdsnj.com%2F"
+        allowfullscreen=""
+        frameborder="0"
+      >
+      </iframe>
+    </div>
+
+    <script>
+      // window.location.href='https://app.chatgptbuilder.io/webchat/?p=1587692&ref=Frameception_Test'
+      /* Navigate back to the url and then display none on .scheduler */ function closeScheduler() {}
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("SCHEDULER DOM LOADED");
+        try {
+          if (window.self !== window.top) {
+            var parentKtt10Close =
+              window.parent.document.querySelector(".ktt10-close");
+            if (parentKtt10Close) {
+              var elementProperties = {
+                tagName: parentKtt10Close.tagName,
+                attributes: Array.from(parentKtt10Close.attributes).reduce(
+                  (acc, attr) => {
+                    acc[attr.name] = attr.value;
+                    return acc;
+                  },
+                  {}
+                ),
+                style: parentKtt10Close.getAttribute("style"),
+                innerHTML: parentKtt10Close.innerHTML,
+                parentNode: parentKtt10Close.parentNode,
+                nextSibling: parentKtt10Close.nextSibling,
+              };
+
+              parentKtt10Close.parentNode.removeChild(parentKtt10Close);
+
+              window.showParentKtt10Close = function () {
+                if (!window.parent.document.querySelector(".ktt10-close")) {
+                  var newElement = window.parent.document.createElement(
+                    elementProperties.tagName
+                  );
+
+                  Object.keys(elementProperties.attributes).forEach((attr) => {
+                    newElement.setAttribute(
+                      attr,
+                      elementProperties.attributes[attr]
+                    );
+                  });
+
+                  if (elementProperties.style) {
+                    newElement.setAttribute("style", elementProperties.style);
+                  }
+
+                  newElement.innerHTML = elementProperties.innerHTML;
+
+                  if (elementProperties.nextSibling) {
+                    elementProperties.parentNode.insertBefore(
+                      newElement,
+                      elementProperties.nextSibling
+                    );
+                  } else {
+                    elementProperties.parentNode.appendChild(newElement);
+                  }
+                }
+              };
+
+              console.log(
+                "ktt10-close in parent has been removed. Use showParentKtt10Close() to recreate and show it."
+              );
+            }
+          }
+        } catch (e) {
+          console.log(
+            "Unable to access parent window. This may be due to cross-origin restrictions.",
+            e
+          );
+        }
+      });
+    </script>
+
+    <style>
+      .scheduler {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .scheduler__iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .scheduler__close-btn {
+        position: absolute;
+        top: 10px;
+        right: 5%;
+        background: white;
+        border-radius: 4px;
+		padding: 4px 6px;
+		font-weight: 700;
+        color: black;
+        font-size: 0.8rem;
+        cursor: pointer;
+        z-index: 1001;
+        text-decoration: none;
+      }
+
+	    .scheduler__close-btn:hover {
+			background: #f0f0f0;
+		}
+
+      .scheduler__external-btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: black;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1002;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
