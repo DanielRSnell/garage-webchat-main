@@ -24,9 +24,8 @@
         class="scheduler__iframe"
         src="https://assets.a2o-static.com/git/scheduler/v3/street2fleet/themes/precision/2024-07-31-16-01-40/index.html?api_token=4%7CRhwvRsp4MVAtoEZYp9a8r7xcHC1q6heig5hEtfzB&amp;market=pd-northern-nj&amp;bust_downstream_cache=1&amp;iframe_parent_domain=https%3A%2F%2Fpdsnj.com&amp;ga_client_id=1381565334.1723813013&amp;landing_page=https%3A%2F%2Fpdsnj.com%2Fabout&amp;referrer=https%3A%2F%2Fpdsnj.com%2F&amp;original_referrer=https%3A%2F%2Fpdsnj.com%2F"
         allowfullscreen=""
-        frameborder="0"
-      >
-      </iframe>
+        
+      />
     </div>
 
     <script>
@@ -35,6 +34,7 @@
     </script>
 
     <script>
+		   // @ts-nocheck    
       document.addEventListener("DOMContentLoaded", function () {
         console.log("SCHEDULER DOM LOADED");
         try {
@@ -58,7 +58,7 @@
               };
 
               parentKtt10Close.parentNode.removeChild(parentKtt10Close);
-
+			  
               window.showParentKtt10Close = function () {
                 if (!window.parent.document.querySelector(".ktt10-close")) {
                   var newElement = window.parent.document.createElement(
