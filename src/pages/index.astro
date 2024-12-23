@@ -1,3 +1,13 @@
+---
+
+const version = 'https://assets.a2o-static.com/git/scheduler/v3/street2fleet/versioning.json';
+const response = await fetch(version);
+const data = await response.json();
+
+const { themes } = data;
+
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +32,7 @@
       >
       <iframe
         class="scheduler__iframe"
-        src="https://assets.a2o-static.com/git/scheduler/v3/street2fleet/themes/precision/2024-07-31-16-01-40/index.html?api_token=4%7CRhwvRsp4MVAtoEZYp9a8r7xcHC1q6heig5hEtfzB
+        src={`https://assets.a2o-static.com/git/scheduler/v3/street2fleet/themes/precision/${themes.pd.compileDate}/index.html?api_token=4%7CRhwvRsp4MVAtoEZYp9a8r7xcHC1q6heig5hEtfzB
     &amp;market=pd-northern-nj
     &amp;bust_downstream_cache=1
     &amp;iframe_parent_domain=https%3A%2F%2Fpdsnj.com
@@ -30,7 +40,7 @@
     &amp;landing_page=https%3A%2F%2Fpdsnj.com%2Fabout
     &amp;referrer=https%3A%2F%2Fpdsnj.com%2F
     &amp;original_referrer=https%3A%2F%2Fpdsnj.com%2F
-    &amp;referral=pdsnj-ai-chatbot" 
+    &amp;referral=pdsnj-ai-chatbot`}
     
     width="100%" 
     height = "550px" 
